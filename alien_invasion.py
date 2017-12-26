@@ -21,12 +21,9 @@ def run_game():
         gf.check_events(ship,ai_settings,screen,bullets)
         #移动飞船
         ship.update()
-        bullets.update()
-        #删除已消失的子弹
-        for bullet in bullets:
-            if bullet.rect.bottom<=0:
-                bullets.remove(bullet)
-        print(len(bullets))
+        #子弹更新
+        gf.update_bullets(bullets)
+
         #更新屏幕
         gf.update_screen(ai_settings,screen,ship,bullets)
 
